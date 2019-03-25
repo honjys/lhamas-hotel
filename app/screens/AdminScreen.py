@@ -9,19 +9,19 @@ class AdminScreen(tk.Frame):
         self.parent = parent
 
         self.quartosB=tk.Button(self, text=' Lista de Quartos',command=self.quartos)                
-        self.horariosB = tk.Button(self, text ='    Ver Horários    ', command=self.horario)
+        self.horariosB = tk.Button(self, text ='Ver Horários', command=self.horario)
         self.funcionariosB = tk.Button(self, text ='Lista de Funcionarios', command=self.cadasfuncio)
         self.clientesB = tk.Button(self,text='Lista de Clientes',command=self.clientes)
-        self.logoff=tk.Button(self, text = '    Log off ', command = self.sair)
+        self.logoff=tk.Button(self, text = 'Log off', command = self.sair)
         
         self.largura = 35
         self.altura = 10
 
         self.quartosB.grid(row=0,column=0,ipadx= self.largura, ipady = self.altura)
-        self.horariosB.grid(row=1,column=1,ipadx= self.largura, ipady = self.altura)
-        self.funcionariosB.grid(row=2,column=2,ipadx=self.largura, ipady=self.altura)
+        self.horariosB.grid(row=1,column=0,ipadx= self.largura, ipady = self.altura)
+        self.funcionariosB.grid(row=2,column=0,ipadx=self.largura, ipady=self.altura)
         self.clientesB.grid(row=3, column = 0,ipadx = self.largura, ipady = self.altura)
-        self.logoff.grid(row=4,column = 2,ipadx = self.largura+20, ipady = self.altura)
+        self.logoff.grid(row=4,column = 0,ipadx = self.largura, ipady = self.altura)
 
     def quartos(self):
         messagebox.showerror('ERROR',"você não fez ainda")
