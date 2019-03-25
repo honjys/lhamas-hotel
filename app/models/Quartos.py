@@ -4,3 +4,4 @@ class Quarto:
         self.metros2 = metros2
         self.aluguel_dia = aluguel_dia
         self.status = status
+    
