@@ -8,5 +8,10 @@ class Quartos(tk.Frame):
         self.parent = parent
 
     def voltarf(self):
+        if self.parent.session == 'admin':
+            self.destroy()
+            self.parent.show_adminscreen()
+            
+        elif self.parent.session == 'funcionario':
             self.destroy()
             self.parent.show_funcionarioscreen()
