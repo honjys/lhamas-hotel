@@ -21,7 +21,7 @@ class AdminScreen(tk.Frame):
         self.logoff.pack()
 
     def quartos(self):
-        messagebox.showerror('ERROR',"você não fez ainda")
+        messagebox.showerror('error','inacabado')
 
     def clientes(self):
         messagebox.showerror('ERROR',"você não fez ainda")

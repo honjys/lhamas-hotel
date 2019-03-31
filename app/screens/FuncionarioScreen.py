@@ -20,9 +20,9 @@ class FuncionarioScreen(tk.Frame):
         self.horariosB.grid(row=1,column=0,  ipadx=self.largura - 2, ipady=self.altura)
         self.logoff.grid(row=1,column = 2, ipadx=self.largura +20, ipady=self.altura)
         self.menu = tk.Menu(self)
-
+        
     def quartos(self):
-    	messagebox.showerror("ERROR", "Em construção")
+        messagebox.showerror('Error','Inacabado')
 
     def clientes(self):
     	messagebox.showerror("ERROR", "Em construção")
