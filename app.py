@@ -1,5 +1,4 @@
 import tkinter as tk
-from app.screens.FirstScreen import FirstScreen
 from app.screens.LoginUser import Login
 from app.screens.CadastroScreen import Cadastrar
 from app.screens.FuncionarioScreen import FuncionarioScreen
@@ -20,43 +19,39 @@ class App(tk.Tk):
 
     def show_funcionarioscreen(self):
     	self.funciotela = FuncionarioScreen(self)
-    	self.funciotela.grid()
+    	self.funciotela.pack()
 
     def show_adminscreen(self):
         self.adm = AdminScreen(self)
-        self.adm.grid()
+        self.adm.pack()
 
     def show_login(self):
         self.login = Login(self)
         self.login.pack()
-
-    def show_firstscreen(self):
-        self.firstscreen = FirstScreen(self)
-        self.firstscreen.grid()
-
+    
     def show_cadastrar(self):
         self.cadastrar = Cadastrar(self)
-        self.cadastrar.grid()
+        self.cadastrar.pack()
 
     def show_cadastrafuncionario(self):
         self.cadastrafuncio = CadastraFuncio(self)
-        self.cadastrafuncio.grid()
+        self.cadastrafuncio.pack()
     
     def show_clientes(self):
         self.clientes = Clientes(self)
-        self.clientes.grid()
+        self.clientes.pack()
     
     def show_quartos(self):
         self.quartos=Quartos(self)
-        self.quartos.grid()
+        self.quartos.pack()
         
     def clear_campo(self):
         self.cadastrar =Cadastrar(self)
-        self.cadastrar.grid()
+        self.cadastrar.pack()
         
     def clear_campoF(self):
         self.cadastrafuncio = CadastraFuncio(self)
-        self.cadastrafuncio.grid()
+        self.cadastrafuncio.pack()
 
     def add_funcio(self):
         self.add_funcio = FuncionarioRepo()

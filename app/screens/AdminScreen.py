@@ -13,15 +13,12 @@ class AdminScreen(tk.Frame):
         self.funcionariosB = tk.Button(self, text ='Lista de Funcionarios', command=self.cadasfuncio)
         self.clientesB = tk.Button(self,text='Lista de Clientes',command=self.clientes)
         self.logoff=tk.Button(self, text = 'Log off', command = self.sair)
-        
-        self.largura = 35
-        self.altura = 10
 
-        self.quartosB.grid(row=0,column=0,ipadx= self.largura, ipady = self.altura)
-        self.horariosB.grid(row=1,column=0,ipadx= self.largura, ipady = self.altura)
-        self.funcionariosB.grid(row=2,column=0,ipadx=self.largura, ipady=self.altura)
-        self.clientesB.grid(row=3, column = 0,ipadx = self.largura, ipady = self.altura)
-        self.logoff.grid(row=4,column = 0,ipadx = self.largura, ipady = self.altura)
+        self.quartosB.pack()
+        self.horariosB.pack()
+        self.funcionariosB.pack()
+        self.clientesB.pack()
+        self.logoff.pack()
 
     def quartos(self):
         messagebox.showerror('ERROR',"você não fez ainda")
