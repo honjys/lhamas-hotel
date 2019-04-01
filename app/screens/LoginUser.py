@@ -1,5 +1,6 @@
 import tkinter as tk
 from app.database.AdminRepo import AdminDB
+from app.database.database import DatabaseConnection
 #from PIL import ImageTk, Image
 
 
@@ -25,10 +26,15 @@ class Login(tk.Frame):
         self.passwordipt.pack()
         self.confirmar.pack(side=tk.LEFT)
         self.sair.pack(side=tk.RIGHT)
-
-
+        
     def logar(self):
-        if self.parent.loginAdmin(self.nomeipt,self.passwordipt) == True:
+        #get
+        self.cpf = self.nomeipt.get()
+        self.senha = self.passwordipt.get()
+
+        self.db = AdminDB()
+
+        if (self.db.check_admin(self.cpf, self.senha)):
             self.destroy()
             self.parent.show_adminscreen()
         else:
