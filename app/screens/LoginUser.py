@@ -27,8 +27,7 @@ class Login(tk.Frame):
 
 
     def logar(self):
-        if self.nomeipt.get() == 'joao' and self.passwordipt.get() == '666':
-            self.parent.session='admin'
+        if self.parent.loginAdmin(self.nomeipt,self.passwordipt) == True:
             self.destroy()
             self.parent.show_adminscreen()
         else:

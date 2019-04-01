@@ -7,6 +7,8 @@ from app.screens.QuartosScreen import Quartos
 from app.screens.AdminScreen import AdminScreen
 from app.screens.CadastraFuncio import CadastraFuncio
 from app.database.FuncionarioRepo import FuncionarioRepo
+from app.database.AdminRepo import AdminDB
+from tkinter import messagebox
 
 
 class App(tk.Tk):
@@ -56,5 +58,13 @@ class App(tk.Tk):
     def add_funcio(self):
         self.add_funcio = FuncionarioRepo()
 
+    def loginAdmin(self, cpf,senha):
+        self.cpfa= cpf
+        self.senhab = senha
+        try:
+            if AdminDB.check_admin(self.cpfa,self.senhab) == True:
+                return True
+        except Exception:
+            messagebox.showerror('Error', 'Ih... não funfou, hein')
 root = App()
 root.mainloop()
