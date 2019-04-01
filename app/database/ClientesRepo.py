@@ -13,3 +13,9 @@ class ClienteRepo:
             return True
         except Exception:
             return messagebox.showerror("ERROR", "Algo não funvionou :/")
+
+    def show_all(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM cliente")
+        results = cursor.fetchall() 
+        return results

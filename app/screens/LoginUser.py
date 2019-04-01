@@ -1,5 +1,6 @@
 import tkinter as tk
 from app.database.AdminRepo import AdminDB
+from app.database.FuncionarioRepo import FuncionarioRepo
 from app.database.database import DatabaseConnection
 #from PIL import ImageTk, Image
 
@@ -9,7 +10,7 @@ class Login(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.parent = parent
         '''self.imgGetter = Image.open("app/img/login.png")
-        self.imgResizer = self.imgGetter.resize((300, 200), Image.ANTIALIAS)
+        self.imgResizer = self.imgGetter.resize((200, 100), Image.ANTIALIAS)
         self.userImg = ImageTk.PhotoImage(self.imgResizer)
         self.img = tk.Label(image=self.userImg, highlightthickness=0, bd=0)
         self.img.pack()'''
@@ -31,13 +32,14 @@ class Login(tk.Frame):
         #get
         self.cpf = self.nomeipt.get()
         self.senha = self.passwordipt.get()
-
+        self.dbf = FuncionarioRepo()
         self.db = AdminDB()
 
         if (self.db.check_admin(self.cpf, self.senha)):
+            self.parent.session='admin'
             self.destroy()
             self.parent.show_adminscreen()
-        else:
+        elif (self.dbf.check_funcionario(self.cpf, self.senha)):
             self.parent.session='funcionario'
             self.destroy()
             self.parent.show_funcionarioscreen()

@@ -8,8 +8,11 @@ from app.screens.AdminScreen import AdminScreen
 from app.screens.CadastraFuncio import CadastraFuncio
 from app.database.FuncionarioRepo import FuncionarioRepo
 from app.database.AdminRepo import AdminDB
+from app.screens.ListCliente import Listar
+from app.database.ClientesRepo import ClienteRepo
 from tkinter import messagebox
 
+clienterepo = ClienteRepo()
 
 class App(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -58,6 +61,10 @@ class App(tk.Tk):
     def add_funcio(self):
         self.add_funcio = FuncionarioRepo()
 
-        
+    def show_Lista(self):
+        self.listagem = Listar(self, clienterepo.show_all())
+
+        self.listagem.pack()
+
 root = App()
 root.mainloop()

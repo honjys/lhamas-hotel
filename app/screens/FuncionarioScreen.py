@@ -25,7 +25,8 @@ class FuncionarioScreen(tk.Frame):
         messagebox.showerror('Error','Inacabado')
 
     def clientes(self):
-    	messagebox.showerror("ERROR", "Em construção")
+        self.destroy()
+        self.parent.show_Lista()
         
     def cadastra(self):
     	self.destroy()
