@@ -1,4 +1,5 @@
 import tkinter as tk
+from app.database.AdminRepo import AdminDB
 #from PIL import ImageTk, Image
 
 

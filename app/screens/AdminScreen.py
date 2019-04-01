@@ -14,11 +14,14 @@ class AdminScreen(tk.Frame):
         self.clientesB = tk.Button(self,text='Lista de Clientes',command=self.clientes)
         self.logoff=tk.Button(self, text = 'Log off', command = self.sair)
 
-        self.quartosB.pack()
-        self.horariosB.pack()
-        self.funcionariosB.pack()
-        self.clientesB.pack()
-        self.logoff.pack()
+        self.largura =35
+        self.altura = 10
+
+        self.quartosB.grid(row=0,column=0, ipadx=self.largura, ipady=self.altura)
+        self.horariosB.grid(row=0,column=1, ipadx=self.largura, ipady=self.altura)
+        self.funcionariosB.grid(row=0,column=2, ipadx=self.largura, ipady=self.altura)
+        self.clientesB.grid(row=0,column=2, ipadx=self.largura, ipady=self.altura)
+        self.logoff.grid(row=0,column=2, ipadx=self.largura, ipady=self.altura)
 
     def quartos(self):
         messagebox.showerror('error','inacabado')

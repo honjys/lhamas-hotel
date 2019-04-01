@@ -12,9 +12,10 @@ class AdminDB:
         try:
             cursor = self.connection.cursor()
             cursor.execute("SELECT cpf,senha FROM admin")
+            print(cursor.fetch)
             for cpf,senha in cursor.fetch:
                 if cpf == cpfipt:
                     if senha == senhaipt:
                         return True
         except Exception:
-            return messagebox.showerror("ERROR", "Algo não funvionou :/")
+            return cursor.fetch

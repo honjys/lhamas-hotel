@@ -58,13 +58,6 @@ class App(tk.Tk):
     def add_funcio(self):
         self.add_funcio = FuncionarioRepo()
 
-    def loginAdmin(self, cpf,senha):
-        self.cpfa= cpf
-        self.senhab = senha
-        try:
-            if AdminDB.check_admin(self.cpfa,self.senhab) == True:
-                return True
-        except Exception:
-            messagebox.showerror('Error', 'Ih... não funfou, hein')
+        
 root = App()
 root.mainloop()
