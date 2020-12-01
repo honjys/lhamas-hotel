@@ -1,4 +1,4 @@
 # lhamas-hotel
 
 necessário:
-pillow, tkinter 
+tkinter 
